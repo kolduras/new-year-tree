@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <canvas id="c" width="512" height="512"></canvas>
+    <script>
+        d = document.getElementById("c").getContext('2d');
+        r = [];
+        b = [];
+        x = x0 = 256;
+        y = y0 = 32;
+        a0 = 0;
+        p = 2 * Math.PI;
+        r = Math.random;
+
+        for (i = 0; i < 384; i++) {
+            b[i] = Math.round(r() * 0.53);
+            r[i] = b[i] ? 0.4 : r();
+        };
+
+        setInterval(() => {
+            a0 += 0.02;
+            a0 %= p;
+
+            d.fillStyle = '#000';
+            d.rect(0, 0, 512, 512);
+            d.fill();
+        
+            for (i = 0; i < 384; i++) {
+                a = 0.1 * i;
+                c = Math.cos(a0 + a);
+                s = Math.sin(a0 + a);
+
+                x = x0 + 3 * a * c;
+                y = i +  y0 + a * s++;
+
+                d.beginPath();
+                d.moveTo(x, y);
+
+                d.fillStyle = b[i]
+                    ? `rgba(255,255,0,${0.8 * s})`
+                    : `rgba(0,112,32,${0.3 * r[i] * s})`;
+
+                d.arc(x, y, 28 * r[i], 0, p, 1);
+                d.fill();
+                d.closePath();
+            }
+        }, 16);
+    </script>
+</body>
+</html>
+
