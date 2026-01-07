@@ -1,0 +1,22 @@
+{
+  "name": "new-year-tree",
+  "version": "1.0.0",
+  "description": "JS demo",
+  "private": true,
+  "author": {
+    "name": "Eugeny Lapin",
+    "email": "kolduras@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kolduras/new-yer-tree.git"
+  },
+  "scripts": {
+    "build": "tools/build.sh src/new-year-tree.js new-year-tree-build",
+    "postinstall": "npm run build",
+    "start": "open new-year-tree-build/new-year-tree.html"
+  },
+  "dependencies": {
+    "regpack": "5.0.1"
+  }
+}
