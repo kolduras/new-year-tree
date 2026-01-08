@@ -14,9 +14,7 @@ for (i = 0; i < 384; i++) {
 setInterval(() => {
     q += .02;
     q %= 2 * Math.PI;
-    c.fillStyle = `#000`;
-    c.rect(0, 0, 374, 512);
-    c.fill();
+    c.clearRect(0, 0, 374, 512);
 
     for (i = 0; i < 384; i++) {
         t = .1 * i;
