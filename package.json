@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kolduras/new-yer-tree.git"
+    "url": "https://github.com/kolduras/new-year-tree.git"
   },
   "scripts": {
     "build": "tools/build.sh src/new-year-tree.js new-year-tree-build",
